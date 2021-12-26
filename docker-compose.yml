@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  java:
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile.jdk
+      args:
+        - VERSION=${JDK_VERSION}
+    volumes:
+      - ${}:${}:${}
+    container_name: ${JDK_CONTAINER_NAME}
